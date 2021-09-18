@@ -1,31 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Counter({ prop }) {
-  console.log(prop);
-  const [workTime, getWorkTime] = useState(25);
+function Counter(props) {
+  const { timer, setTimer } = props;
 
   const handleDecreaseTime = () => {
-    getWorkTime(workTime - 1)
+    setTimer(timer - 1)
   }
 
   const handleIncreaseTime = () => {
-    getWorkTime(workTime + 1)
+    setTimer(timer + 1)
   }
 
   const handleTimeZero = () => {
-    getWorkTime(0)
+    setTimer(0)
   }
 
   return (
     <div>
       <section>
-        <h3>{ workTime }</h3>
+        <h3>{ timer }</h3>
       </section>
       <section>
         <button type="button" onClick={ () => handleIncreaseTime() }>
           Increase Time
         </button>
-        <button type="button" onClick={ () => workTime > 0 ? handleDecreaseTime() : handleTimeZero() }>
+        <button type="button" onClick={ () => timer > 0 ? handleDecreaseTime() : handleTimeZero() }>
           Decrease Time
         </button>
       </section>

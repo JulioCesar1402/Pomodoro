@@ -1,19 +1,14 @@
 import React from 'react';
-import ConfigureTime from "./Components/ConfigureTime"
 import Provider from './Context/Provider';
 import './App.css';
+import MainRouter from './Router/MainRouter';
 
 function App() {
   return (
     <Provider>
       <div className="App">
-        <header className="App-header">
-          <h1 className="header-title">
-            Pomodoro
-          </h1>
-        </header>
         <section>
-          <ConfigureTime />
+          <MainRouter />
         </section>
       </div>
     </Provider>
