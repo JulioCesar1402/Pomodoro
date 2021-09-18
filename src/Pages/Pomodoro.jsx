@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Timer from "../Components/PomodoroTimer/Timer";
+import MainContext from "../Context/MainContext";
 
 function Pomodoro() {
+  const { workTime } = useContext(MainContext);
   return (
     <div>
         <header className="App-header">
@@ -9,7 +11,7 @@ function Pomodoro() {
             Pomodoro
           </h1>
           <section>
-            <Timer />
+            <Timer template={ workTime } />
           </section>
         </header>
     </div>

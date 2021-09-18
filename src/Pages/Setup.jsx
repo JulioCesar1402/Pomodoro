@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ConfigureTime from "../Components/SetupCounter/ConfigureTime";
+import ConfigureCounter from "../Components/SetupCounter/ConfigureCounter";
 
 function Setup() {
   return (
@@ -10,7 +10,7 @@ function Setup() {
             Pomodoro
           </h1>
         </header>
-      <ConfigureTime />
+      <ConfigureCounter />
       <section>
         <Link to="/Pomodoro">
           <button type="button">
