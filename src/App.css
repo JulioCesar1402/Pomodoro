@@ -1,3 +1,79 @@
+body {
+  background-color: #1B1B1B;
+  color: #A8A8A8;
+}
+
+.header-title {
+  margin-top: 8vh;
+  font-size: calc(2vw + 2vh + 1vmin);
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+  color: #7A7A7A;
+  margin: 1.5vh 0;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.arrow-btn:hover {
+  color: #D9DBE9;
+}
+
+.timer-item {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px 50px;
+  margin-top: 8vh;
+}
+
+.arrow-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.circular {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 50px;
+  background-color: #262626;
+  color: #A8A8A8;
+  cursor: pointer;
+}
+
+.button, .setup-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 50px;
+  background-color: #262626;
+  color: #A8A8A8;
+  cursor: pointer;
+  font-size: calc(1vw + 1vh + 1vmin);
+}
+
+.button {
+  margin-top: 10vh;
+}
+
+.button:hover, .setup-btn:hover {
+  background-color: #333333;
+}
+
+.timer {
+  font-size: calc(4vw + 4vh + 3vmin);
+}
+
+.timer-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #262626;
+  width: 12vw;
+  height: 16vh;
+  border-radius: 8px;
+}
+
 .App {
   text-align: center;
 }
@@ -8,4 +84,17 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+}
+
+.pomo-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+}
+
+.counter-setup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

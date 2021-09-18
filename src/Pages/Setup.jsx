@@ -7,14 +7,14 @@ function Setup() {
     <div>
         <header className="App-header">
           <h1 className="header-title">
-            Pomodoro
+            <b>Pomodoro</b>
           </h1>
         </header>
       <ConfigureCounter />
       <section>
         <Link to="/pomodoro">
-          <button type="button">
-            Start
+          <button type="button" className="button">
+            <b>Start</b>
           </button>
         </Link>
       </section>

@@ -4,17 +4,30 @@ import { Link } from "react-router-dom";
 
 function Button(boolean, template) {
   const { countSections, getCountSections, sectionsTime, btn } = template;
+  const [btnPath, setBtnPath] = useState('short');
+
+  useEffect(() => {
+    countSections.length % sectionsTime === 0 ? setBtnPath('long') : setBtnPath('short')
+  }, [countSections, sectionsTime])
 
   const handleCountSections = () => {
     const array = ["."]
     return countSections.length !== sectionsTime ? getCountSections( array.concat(countSections)) : getCountSections(countSections)
   }
 
-  return boolean ?
-    <Link to="/break">
-      <button type="button" onClick={() => handleCountSections()} >{btn}</button>
+  if (btn !== "Pomodoro") {
+    return boolean ?
+    <Link to={`/${btnPath}-break`} >
+      <button type="button" onClick={() => handleCountSections()} ><b>{btn}</b></button>
     </Link>
-    : <button type="button" disabled="true">{btn}</button>
+    : <button type="button" disabled="true"><b>{btn}</b></button>
+  } else {
+    return boolean ?
+    <Link to={`/pomodoro`} >
+      <button type="button" onClick={() => handleCountSections()} ><b>{btn}</b></button>
+    </Link>
+    : <button type="button" disabled="true"><b>{btn}</b></button>
+  }
 
 };
 
@@ -60,19 +73,17 @@ function Timer({ template }) {
     return time < 10 ? '0' + time : time
   }
 
-  // const handleAlert = () => {
-  //   if ( min === 0 && sec === 0 ) {
-  //     return Button(true, template) &&
-  //   }
-  // }
-
   return (
     <div>
-      <div>{handleFormatTimer(min)} : { handleFormatTimer(sec) }</div>
-      <section>{countSections.map((item) => item) }</section>
-      <section>
-      { min === 0 && sec === 0 ? Button(true, template) : Button(false, template)}
-      </section>
+      <div className="circular">
+        <h3 className="timer"><b>{handleFormatTimer(min)} : { handleFormatTimer(sec) }</b></h3>
+        <section>{countSections.map((item) => item) }</section>
+      </div>
+      <div>
+        <section>
+          { min === 0 && sec === 0 ? Button(true, template) : Button(false, template)}
+        </section>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 function Counter(props) {
-  const { timer, setTimer } = props;
+  const { timer, setTimer, title } = props;
 
   const handleDecreaseTime = () => {
     setTimer(timer - 1)
@@ -16,16 +16,19 @@ function Counter(props) {
   }
 
   return (
-    <div>
+    <div className="timer-item">
       <section>
-        <h3>{ timer }</h3>
+        <div className="timer-num">
+          <h3 className="timer">{ timer }</h3>
+        </div>
+        <h2>{ title }</h2>
       </section>
-      <section>
-        <button type="button" onClick={ () => handleIncreaseTime() }>
-          Increase Time
+      <section className="arrow-item">
+        <button type="button" onClick={ () => handleIncreaseTime() } className="arrow-btn">
+          <i className='bx bxs-up-arrow-circle bx-md' ></i>
         </button>
-        <button type="button" onClick={ () => timer > 1 ? handleDecreaseTime() : handleTimeZero() }>
-          Decrease Time
+        <button type="button" onClick={ () => timer > 1 ? handleDecreaseTime() : handleTimeZero() } className="arrow-btn">
+          <i className='bx bxs-down-arrow-circle bx-md' ></i>
         </button>
       </section>
     </div>

@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+import BackToSetup from "../Components/BackToSetup";
 import Timer from "../Components/PomodoroTimer/Timer";
 import MainContext from "../Context/MainContext";
 
-function Break() {
-  const { breakTime, countSectionsBreak, getCountSectionsBreak, sectionsTime } = useContext(MainContext);
+function ShortBreak() {
+  const { shortBreakTime, countSectionsBreak, getCountSectionsBreak, sectionsTime } = useContext(MainContext);
   const template = {
-    time: breakTime,
+    time: shortBreakTime,
     countSections: countSectionsBreak,
     getCountSections: getCountSectionsBreak,
     sectionsTime,
@@ -15,9 +16,12 @@ function Break() {
   return (
     <div>
         <header className="App-header">
-          <h1 className="header-title">
-            Break
-          </h1>
+          <section>
+            <h1 className="header-title">
+              <b>Short Break</b>
+            </h1>
+            <BackToSetup />
+          </section>
           <section>
             <Timer template={ template } />
           </section>
@@ -26,4 +30,4 @@ function Break() {
   );
 }
 
-export default Break;
+export default ShortBreak;

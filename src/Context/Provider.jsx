@@ -4,14 +4,16 @@ import MainContext from './MainContext';
 
 const Provider = ({ children }) => {
   const [workTime, getWorkTime] = useState(25);
-  const [breakTime, getBreakTime] = useState(5);
+  const [shortBreakTime, getShortBreakTime] = useState(5);
+  const [longBreakTime, getLongBreakTime] = useState(10);
   const [sectionsTime, getSectionsTime] = useState(3);
   const [countSectionsPomodoro, getCountSectionsPomodoro] = useState(["."]);
   const [countSectionsBreak, getCountSectionsBreak] = useState(["."]);
 
   const context = {
     workTime, getWorkTime,
-    breakTime, getBreakTime,
+    shortBreakTime, getShortBreakTime,
+    longBreakTime, getLongBreakTime,
     sectionsTime, getSectionsTime,
     countSectionsPomodoro, getCountSectionsPomodoro,
     countSectionsBreak, getCountSectionsBreak
