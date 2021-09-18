@@ -10,6 +10,8 @@ function Timer(props) {
     setSec(sec - 1)
   }, [])
 
+  // Por conta do tempo para executar a função, é necessário aumentar em um segundo o cronometro
+  // caso contrario ele travará com um minuto de atraso
   useEffect(() => {
     const handleIncreaseMin = () => {
       const timer = min <= 1 ? 61000 : 60000;
@@ -27,20 +29,10 @@ function Timer(props) {
       setTimeout(() => setSec(sec - 1), 1000);
     }
 
-    // const handleRestoreSec = () => {
-    //   setSec(59);
-    // }
-
-
     const handleRestoreSec = () => {
       return (min === 0 && sec <= 0) ? setSec(0) : setSec(59);
     }
 
-    // const handleZeroSec = () => {
-    //   setSec(0);
-    // }
-
-    // return sec >= 0 ? handleIncreaseSec() : ( (min === 0 && sec === 0) ? handleZeroSec() : handleRestoreSec());
     return sec >= 0 ? handleIncreaseSec() : handleRestoreSec();
   }, [sec, min]);
 
