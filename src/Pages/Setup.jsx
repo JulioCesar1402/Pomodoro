@@ -12,7 +12,7 @@ function Setup() {
         </header>
       <ConfigureCounter />
       <section>
-        <Link to="/Pomodoro">
+        <Link to="/pomodoro">
           <button type="button">
             Start
           </button>

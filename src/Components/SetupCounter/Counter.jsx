@@ -12,7 +12,7 @@ function Counter(props) {
   }
 
   const handleTimeZero = () => {
-    setTimer(0)
+    setTimer(1)
   }
 
   return (
@@ -24,7 +24,7 @@ function Counter(props) {
         <button type="button" onClick={ () => handleIncreaseTime() }>
           Increase Time
         </button>
-        <button type="button" onClick={ () => timer > 0 ? handleDecreaseTime() : handleTimeZero() }>
+        <button type="button" onClick={ () => timer > 1 ? handleDecreaseTime() : handleTimeZero() }>
           Decrease Time
         </button>
       </section>

@@ -6,11 +6,15 @@ const Provider = ({ children }) => {
   const [workTime, getWorkTime] = useState(25);
   const [breakTime, getBreakTime] = useState(5);
   const [sectionsTime, getSectionsTime] = useState(3);
+  const [countSectionsPomodoro, getCountSectionsPomodoro] = useState(["."]);
+  const [countSectionsBreak, getCountSectionsBreak] = useState(["."]);
 
   const context = {
     workTime, getWorkTime,
     breakTime, getBreakTime,
     sectionsTime, getSectionsTime,
+    countSectionsPomodoro, getCountSectionsPomodoro,
+    countSectionsBreak, getCountSectionsBreak
   };
 
   return (

@@ -1,9 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-function Timer(props) {
-  const { template } = props;
-  const [min, setMin] = useState(template);
+
+function Button(boolean, template) {
+  const { countSections, getCountSections, sectionsTime, btn } = template;
+
+  const handleCountSections = () => {
+    const array = ["."]
+    return countSections.length !== sectionsTime ? getCountSections( array.concat(countSections)) : getCountSections(countSections)
+  }
+
+  return boolean ?
+    <Link to="/break">
+      <button type="button" onClick={() => handleCountSections()} >{btn}</button>
+    </Link>
+    : <button type="button" disabled="true">{btn}</button>
+
+};
+
+
+function Timer({ template }) {
+  const { time, countSections } = template;
+  const [min, setMin] = useState(time);
   const [sec, setSec] = useState(60);
+
 
   useEffect(() => {
     setMin(min - 1)
@@ -40,9 +60,19 @@ function Timer(props) {
     return time < 10 ? '0' + time : time
   }
 
+  // const handleAlert = () => {
+  //   if ( min === 0 && sec === 0 ) {
+  //     return Button(true, template) &&
+  //   }
+  // }
+
   return (
     <div>
       <div>{handleFormatTimer(min)} : { handleFormatTimer(sec) }</div>
+      <section>{countSections.map((item) => item) }</section>
+      <section>
+      { min === 0 && sec === 0 ? Button(true, template) : Button(false, template)}
+      </section>
     </div>
   );
 }

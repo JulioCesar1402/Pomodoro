@@ -2,21 +2,21 @@ import React, { useContext } from "react";
 import Timer from "../Components/PomodoroTimer/Timer";
 import MainContext from "../Context/MainContext";
 
-function Pomodoro() {
-  const { workTime, countSectionsPomodoro, getCountSectionsPomodoro, sectionsTime } = useContext(MainContext);
+function Break() {
+  const { breakTime, countSectionsBreak, getCountSectionsBreak, sectionsTime } = useContext(MainContext);
   const template = {
-    time: workTime,
-    countSections: countSectionsPomodoro,
-    getCountSections: getCountSectionsPomodoro,
+    time: breakTime,
+    countSections: countSectionsBreak,
+    getCountSections: getCountSectionsBreak,
     sectionsTime,
-    btn: "Break"
+    btn: "Pomodoro"
   };
 
   return (
     <div>
         <header className="App-header">
           <h1 className="header-title">
-            Pomodoro
+            Break
           </h1>
           <section>
             <Timer template={ template } />
@@ -26,4 +26,4 @@ function Pomodoro() {
   );
 }
 
-export default Pomodoro;
+export default Break;
