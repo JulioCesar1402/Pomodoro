@@ -17,3 +17,6 @@ Abra [http://localhost:3000](http://localhost:3000) para vê-la em seu navegador
 
 Para uma melhor expêriencia\
 Você também pode acessa-la por [aqui](https://juliocesar1402.github.io/Pomodoro/#/).
+
+## Fonte de inspiração:
+### [DevChallenge](https://github.com/devchallenge-io/pomodoro)
