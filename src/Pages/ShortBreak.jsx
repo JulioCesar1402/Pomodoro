@@ -10,15 +10,19 @@ function ShortBreak() {
     countSections: countSectionsBreak,
     getCountSections: getCountSectionsBreak,
     sectionsTime,
-    btn: "Pomodoro"
+    btn: "Pomodoro",
+    type: "short",
+    title: "Short Break",
+    message: "It's time to get back to work"
+
   };
 
   return (
     <div>
         <header className="App-header">
-          <section>
+          <section className="pomo-header">
             <h1 className="header-title">
-              <b>Short Break</b>
+              <b>Pomodoro</b>
             </h1>
             <BackToSetup />
           </section>

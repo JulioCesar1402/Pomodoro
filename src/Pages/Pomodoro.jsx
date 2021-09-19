@@ -10,7 +10,10 @@ function Pomodoro() {
     countSections: countSectionsPomodoro,
     getCountSections: getCountSectionsPomodoro,
     sectionsTime,
-    btn: "Break"
+    btn: "Break",
+    type: "pomo",
+    title: "Work",
+    message: "It's time for a break"
   };
 
   return (

@@ -4,21 +4,24 @@ import Timer from "../Components/PomodoroTimer/Timer";
 import MainContext from "../Context/MainContext";
 
 function LongBreak() {
-  const { LongBreakTime, countSectionsBreak, getCountSectionsBreak, sectionsTime } = useContext(MainContext);
+  const { longBreakTime, countSectionsBreak, getCountSectionsBreak, sectionsTime } = useContext(MainContext);
   const template = {
-    time: LongBreakTime,
+    time: longBreakTime,
     countSections: countSectionsBreak,
     getCountSections: getCountSectionsBreak,
     sectionsTime,
-    btn: "Pomodoro"
+    btn: "Pomodoro",
+    type: "long",
+    title: "Long Break",
+    message: "It's time to get back to work"
   };
 
   return (
     <div>
         <header className="App-header">
-          <section>
+          <section className="pomo-header">
             <h1 className="header-title">
-              <b>Long Break</b>
+              <b>Pomodoro</b>
             </h1>
             <BackToSetup />
           </section>

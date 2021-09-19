@@ -18,22 +18,22 @@ function Button(boolean, template) {
   if (btn !== "Pomodoro") {
     return boolean ?
     <Link to={`/${btnPath}-break`} >
-      <button type="button" onClick={() => handleCountSections()} ><b>{btn}</b></button>
+      <button type="button" className="btn-pomodoro" onClick={() => handleCountSections()} ><i class='bx bxs-right-arrow bx-lg'></i></button>
     </Link>
-    : <button type="button" disabled="true"><b>{btn}</b></button>
+    : <button type="button" className="btn-pomodoro-disabled" disabled="true"><i class='bx bxs-right-arrow bx-lg'></i></button>
   } else {
     return boolean ?
     <Link to={`/pomodoro`} >
-      <button type="button" onClick={() => handleCountSections()} ><b>{btn}</b></button>
+      <button type="button" className="btn-pomodoro" onClick={() => handleCountSections()} ><i class='bx bxs-right-arrow bx-lg'></i></button>
     </Link>
-    : <button type="button" disabled="true"><b>{btn}</b></button>
+    : <button type="button" className="btn-pomodoro-disabled" disabled="true"><i class='bx bxs-right-arrow bx-lg'></i></button>
   }
 
 };
 
 
 function Timer({ template }) {
-  const { time, countSections } = template;
+  const { time, type, title, message } = template;
   const [min, setMin] = useState(time);
   const [sec, setSec] = useState(60);
 
@@ -73,18 +73,24 @@ function Timer({ template }) {
     return time < 10 ? '0' + time : time
   }
 
+  useEffect(() => {
+    setTimeout(() => alert(message), time * 60000);
+  }, [time, message])
+
   return (
-    <div>
-      <div className="circular">
-        <h3 className="timer"><b>{handleFormatTimer(min)} : { handleFormatTimer(sec) }</b></h3>
-        <section>{countSections.map((item) => item) }</section>
+    <div className="body-pomo">
+      <div className="next-moment">
+        <div className="circular-border">
+          <div className={`circular-${type}`}>
+            <h3 className="timer"><b>{handleFormatTimer(min)} : { handleFormatTimer(sec) }</b></h3>
+            <h6 className="title">{ title }</h6>
+          </div>
+        </div>
       </div>
-      <div>
         <section>
           { min === 0 && sec === 0 ? Button(true, template) : Button(false, template)}
         </section>
       </div>
-    </div>
   );
 }
 
