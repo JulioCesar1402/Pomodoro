@@ -6,7 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  // source: https://github.com/casperin/hashRouter
+  // source: https://paulgrajewski.medium.com/using-context-and-hashrouter-in-react-87afcefc5966
   <HashRouter>
     <App />
   </HashRouter>, document.getElementById('root'),
